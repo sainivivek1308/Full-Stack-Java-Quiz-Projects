@@ -20,6 +20,8 @@ function App() {
               
                 <Routes>
                 <Route path="/" element={<Home/>} />
+                <Route path="/Full-Stack-Java-Quiz-Projects" element={<Home/>} />
+                
                 <Route path="/contact" element={<Contact/>} />
                 <Route path="/enterdetail" element={<StartQuiz/>} />
                 <Route path="/quizresult" element={<QuizResult/>} />
