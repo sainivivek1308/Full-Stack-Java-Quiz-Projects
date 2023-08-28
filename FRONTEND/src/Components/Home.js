@@ -11,7 +11,7 @@ const Home = () => {
     
   const {addanswerarray}=useContext(QuizContext);
   return (
-    <div className='container m-auto flex flex-wrap  gap-8 ' >
+    <div className='container m-auto flex flex-wrap  gap-8 justigy-between' >
       <div  className="block max-w-xl p-3 bg-white  mx-4 dark:bg-red-800 dark:border-red-700 dark:hover:bg-gray-700"> 
         <h1 className="mb-4 text-2xl font-extrabold leading-none tracking-tight text-pink-600 md:text-5xl lg:text-6xl dark:text-white m-auto">MAKE AN INTERACTIVE QUIZ APPLICATION FOR USERS</h1>
         <h1 class="mb-6 text-2xl font-normal text-gray-700 lg:text-xl sm:px-16 xl:px-20 dark:text-gray-400">Test people’s knowledge with an interactive online quiz</h1>
