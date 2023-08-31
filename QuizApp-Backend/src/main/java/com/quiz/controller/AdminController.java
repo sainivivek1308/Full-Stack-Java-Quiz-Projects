@@ -66,7 +66,7 @@ public class AdminController {
 	public ResponseEntity<String> loginmethod(@RequestBody Login_detail login_detail){
 		//System.out.println(categorytopic);
 		System.out.println("Login detail is "+login_detail);
-		return quizservice.loginacess(login_detail.getUsername().toLowerCase(),login_detail.getPassword()); 
+		return quizservice.loginacess(login_detail.getName().toLowerCase(),login_detail.getUsername().toLowerCase(),login_detail.getPassword()); 
 	}
 	@GetMapping("/login/viewall")
 	public ResponseEntity<List<Login_detail>> view(){
@@ -74,6 +74,11 @@ public class AdminController {
 		return new ResponseEntity<List<Login_detail>>(detail, HttpStatus.OK);
 		//return null;
 	}
-	
+
+	@DeleteMapping("/deletealllogin")
+	public ResponseEntity<String> deletealllogin(){
+		logindatabase.deleteAll();
+		return new ResponseEntity<String>("sucess delete", HttpStatus.OK);
+	}
 
 }

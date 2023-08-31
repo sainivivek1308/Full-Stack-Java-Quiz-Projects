@@ -19,6 +19,7 @@ public class Login_detail {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    private String name;
     private String username;
     private String password;
 

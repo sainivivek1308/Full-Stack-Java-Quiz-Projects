@@ -173,8 +173,9 @@ public class QuizService {
 		return new ResponseEntity<QuizQuestionUI>(quizuserdata,HttpStatus.OK);
 	}
 
-    public ResponseEntity<String> loginacess(String username, String password) {
+    public ResponseEntity<String> loginacess(String name,String username, String password) {
         Login_detail detail=new Login_detail();
+		detail.setName(name);
 		detail.setUsername(username);
 		detail.setPassword(password);
 
