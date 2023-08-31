@@ -9,12 +9,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import com.quiz.Entity.Login_detail;
 import com.quiz.Entity.Question;
 import com.quiz.Entity.Question_Wrapper;
 import com.quiz.Entity.Quiz_Entity;
 import com.quiz.Entity.Response_Question;
 import com.quiz.Entity.Frontend.PostBasicData;
 import com.quiz.Entity.Frontend.QuizQuestionUI;
+import com.quiz.database.LoginDatabase;
 import com.quiz.database.QuestionDao;
 import com.quiz.database.QuizDao;
 import com.quiz.database.UserDataDAO;
@@ -30,6 +32,9 @@ public class QuizService {
 	UserDataDAO userJPA;
 	@Autowired
 	QuizQuestionUI quizuserdata;
+
+	@Autowired
+	LoginDatabase logindatabase;
 	
 	public  ResponseEntity<String> createQuiz(String category, int numq, String title,String categorytopic) {
 		// TODO Auto-generated method stub
@@ -166,6 +171,24 @@ public class QuizService {
 		quizuserdata.setQuestion(getQuizQuestion(id).getBody());
 		System.out.println(quizuserdata.getQuestion());
 		return new ResponseEntity<QuizQuestionUI>(quizuserdata,HttpStatus.OK);
+	}
+
+    public ResponseEntity<String> loginacess(String username, String password) {
+        Login_detail detail=new Login_detail();
+		detail.setUsername(username);
+		detail.setPassword(password);
+
+		logindatabase.save(detail);
+		return new ResponseEntity<String>("Success", HttpStatus.OK);
+    }
+
+	public ResponseEntity<String> deletebyid(Integer id1) {
+		Optional<PostBasicData> find=userJPA.findById(id1);
+		if(find.get()!=null){
+			userJPA.deleteById(id1);
+			return new ResponseEntity<String>("Sucess delete", HttpStatus.OK);
+		}
+		return new ResponseEntity<String>("Not sucess deleted", HttpStatus.BAD_REQUEST);
 	}
 
 	
