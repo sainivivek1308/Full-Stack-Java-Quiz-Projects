@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <>
     <Navbarr/>    
-    <div className='container m-auto flex flex-wrap  gap-8 justigy-between' >
+    <div className='flex flex-wrap  justify-between border-red-600' >
       <div  className="block max-w-xl p-3 bg-white  mx-4 dark:bg-red-800 dark:border-red-700 dark:hover:bg-gray-700"> 
         <h1 className="mb-4 text-2xl font-extrabold leading-none tracking-tight text-pink-600 md:text-5xl lg:text-6xl dark:text-white m-auto">MAKE AN INTERACTIVE QUIZ APPLICATION FOR USERS</h1>
         <h1 class="mb-6 text-2xl font-normal text-gray-700 lg:text-xl sm:px-16 xl:px-20 dark:text-gray-400">Test people’s knowledge with an interactive online quiz</h1>
@@ -23,7 +23,7 @@ const Home = () => {
         </div>
         
       </div>
-      <div className='flex flex-col gap-8 '>
+      <div className='flex flex-col gap-5 '>
         
         <div class="max-w-sm flex gap-5   p-2 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <div className='p-2'>
