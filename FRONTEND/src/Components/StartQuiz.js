@@ -24,13 +24,14 @@ const StartQuiz = () => {
   
     event.preventDefault();
     //alert("Clicked");
-    //console.log(postuserdata)
-    //getdata(postuserdata);
+    console.log(postuserdata)
+    getdata(postuserdata);
     axios
-      .post("https://quiz-backend-hf3v.onrender.com/quiz/startquiz",postuserdata)
+      .post("https://quiz-web-application-5h1o.onrender.com/quiz/startquiz",postuserdata)
       .then((response) => {
         getdata(response.data)
         console.log(response.data);
+        localStorage.setItem("startquiz",true);
         
       })
       .catch((error) => {
@@ -70,22 +71,82 @@ const StartQuiz = () => {
                   <Label value="Enter Category"/>
                   
                 </div>
-                <TextInput id="password2" required shadow placeholder="Enter Category"
+                <div className='flex flex-row gap-9'>
+                  <div className=''>
+                  <input id="password2" required shadow placeholder="Enter Category"
                   name="category"
-                  value={postuserdata.category}
+                  value="Java"
                   onChange={Onchangehandle}
-                  type="text" />
+                  type="radio" />
+                  Java
+                  </div>
+                  <div>
+                    <input id="password2" required shadow placeholder="Enter Category"
+                      name="category"
+                      value="Python"
+                      onChange={Onchangehandle}
+                      type="radio" />Python
+                    
+                  </div>
+                  <div>
+                    <input id="password2" required shadow placeholder="Enter Category"
+                      name="category"
+                      value="HTML"
+                      onChange={Onchangehandle}
+                      type="radio" />HTML
+                    
+                  </div>
+                  <div>
+                    <input id="password2" required disabled shadow placeholder="Enter Category"
+                      name="category"
+                      value="Javascript"
+                      onChange={Onchangehandle}
+                      type="radio" />Javascript
+                    
+                  </div>
+                </div>
+                
               </div>
               <div>
                 <div className="mb-2 block">
                   <Label value="Enter Category Topic" />
                   
                 </div>
-                <TextInput placeholder="Enter category Topic" required shadow 
+                <div className='flex flex-row gap-9'>
+                  <div className=''>
+                  <input id="password2" required shadow placeholder="Enter Category"
                   name="categorytopic"
-                  value={postuserdata.categorytopic}
+                  value="Basic"
                   onChange={Onchangehandle}
-                  type="text" />          
+                  type="radio" />
+                  Basic
+                  </div>
+                  <div>
+                    <input id="password2" required shadow placeholder="Enter Category"
+                      name="categorytopic"
+                      value="Array"
+                      onChange={Onchangehandle}
+                      type="radio" />Array
+                    
+                  </div>
+                  <div>
+                    <input id="password2" required shadow placeholder="Enter Category"
+                      name="categorytopic"
+                      value="String"
+                      onChange={Onchangehandle}
+                      type="radio" />String
+                    
+                  </div>
+                  <div>
+                    <input id="password2" required disabled shadow placeholder="Enter Category"
+                      name="categorytopic"
+                      value="Collection framework"
+                      onChange={Onchangehandle}
+                      type="radio" />Collection framework
+                    
+                  </div>
+                </div>
+                 
                 </div>
                 <Button className="bg-black" type="submit" >
                   Start Quiz

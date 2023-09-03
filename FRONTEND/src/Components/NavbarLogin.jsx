@@ -1,35 +1,34 @@
+import React from 'react'
 import { Navbar } from 'flowbite-react';
-import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Navbarr() {
-  //const Navdata=["About","Start Quiz"]
-  
-  const NavLinkdata=[
-    {
-      "namelink":"/contact",
-      "StartData":"About"  
-    },
-    {
-      "namelink":"/Login",
-      "StartData":"Login Admin"
-    },
-    {
-      "namelink":"/StartQuiz",
-      "StartData":"Start Quiz"
-    },
-    
-  ]
+const NavbarLogin = () => {
+    const NavLinkdata=[
+        {
+          "namelink":"/contact",
+          "StartData":"View Users"  
+        },
+        {
+          "namelink":"/Login",
+          "StartData":"Add Question"
+        },
+        {
+          "namelink":"/StartQuiz",
+          "StartData":"View Question"
+        },
+        
+      ]
   return (
     <>
-    <Navbar
+    
+      <Navbar
         fluid
         rounded
-        style={{fontSize:"20px"}}
-      >
+        style={{fontSize:"25px"}}
+       >
         
         
-          <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
+          <span className="self-center whitespace-nowrap text-3xl font-semibold dark:text-white">
             Quiz Application
           </span>
         {/* </Navbar.Brand>  */}
@@ -62,7 +61,7 @@ export default function Navbarr() {
         </Navbar.Collapse>
       </Navbar>
     </>
-  );
+  )
 }
 
-
+export default NavbarLogin

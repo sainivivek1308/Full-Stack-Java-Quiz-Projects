@@ -6,11 +6,12 @@ import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Label ,TextInput} from 'flowbite-react';
 import StartQuiz from './StartQuiz';
+import Navbarr from './Navbarr';
+
 const Home = () => {
-  const [data,Setdata]=useState("")
-    
-  const {addanswerarray}=useContext(QuizContext);
   return (
+    <>
+    <Navbarr/>    
     <div className='container m-auto flex flex-wrap  gap-8 justigy-between' >
       <div  className="block max-w-xl p-3 bg-white  mx-4 dark:bg-red-800 dark:border-red-700 dark:hover:bg-gray-700"> 
         <h1 className="mb-4 text-2xl font-extrabold leading-none tracking-tight text-pink-600 md:text-5xl lg:text-6xl dark:text-white m-auto">MAKE AN INTERACTIVE QUIZ APPLICATION FOR USERS</h1>
@@ -68,6 +69,7 @@ const Home = () => {
       </div>
         
     </div>
+    </>
   )
 }
 

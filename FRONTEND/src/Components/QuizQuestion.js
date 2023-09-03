@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useContext ,useState} from 'react'
 import './QuizQuestion.css'
 import { Spinner } from 'flowbite-react';
@@ -7,6 +7,8 @@ import { Button } from 'flowbite-react';
 import { HiOutlineArrowRight,} from 'react-icons/hi';
 import QuizContext from '../Context/Quiz Projects/QuizContext';
 import QuizResult from './QuizResult';
+import { useNavigate } from 'react-router-dom';
+import Navbarr from './Navbarr';
 //import { useNavigate } from 'react-router-dom';
 const QuizQuestion = () => {
     const [data,Setdata]=useState("")
@@ -16,7 +18,14 @@ const QuizQuestion = () => {
   const [currentQuestion,setCurrentQuestion]=useState(0);
     const [clickedOption,setClickedOption]=useState(0);
     const [showResult,setShowResult]=useState(false);
+    const navigate=useNavigate();
     // const [objectanswer,setObjectanswer]=useState({id:"",response:""})
+    useEffect(()=>{
+        if(!(localStorage.getItem("startquiz"))){
+            
+            navigate("/")
+        }
+    },[])
     const changeQuestion = ()=>{
         //updateScore();
         const object={"id":questionData.question[currentQuestion].id,
@@ -65,7 +74,9 @@ const QuizQuestion = () => {
     }
     
     return (
-        <>  <div>
+        <>
+        <Navbarr/>  
+        <div>
             {(showResult) ? <QuizResult data={data} />:
 
             (

@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Spinner } from 'flowbite-react';
 import QuizContext from '../Context/Quiz Projects/QuizContext';
 import StartQuiz from './StartQuiz';
+import Navbarr from './Navbarr';
 const QuizResult = ({data}) => {
     const navigate=useNavigate();
     //const id=questionData.id
@@ -19,6 +20,7 @@ const QuizResult = ({data}) => {
    
   return (
     <>
+    <Navbarr/>
     {data?
       (<>
       <div className=' flex bg-red-500 rounded-2xl  flex-col justify-between  p-4 mx-2 '>
