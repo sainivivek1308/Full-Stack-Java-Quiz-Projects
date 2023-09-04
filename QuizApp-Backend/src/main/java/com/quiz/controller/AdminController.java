@@ -22,6 +22,7 @@ import com.quiz.database.LoginDatabase;
 import com.quiz.database.UserDataDAO;
 import com.quiz.service.QuizService;
 
+
 @RestController
 @CrossOrigin("*")
 @RequestMapping(value = "/admin")
@@ -65,7 +66,8 @@ public class AdminController {
 	@PostMapping("/login")
 	public ResponseEntity<String> loginmethod(@RequestBody Login_detail login_detail){
 		//System.out.println(categorytopic);
-		System.out.println("Login detail is "+login_detail);
+		//System.out.println("Login detail is "+login_detail);
+
 		return quizservice.loginacess(login_detail.getName().toLowerCase(),login_detail.getUsername().toLowerCase(),login_detail.getPassword()); 
 	}
 	@GetMapping("/login/viewall")
@@ -74,8 +76,13 @@ public class AdminController {
 		return new ResponseEntity<List<Login_detail>>(detail, HttpStatus.OK);
 		//return null;
 	}
+	@GetMapping("login/getstatus")
+	public ResponseEntity<Boolean> viewid(@RequestParam("name") String name,@RequestParam String username,String password){
 
-	@DeleteMapping("/deletealllogin")
+		return quizservice.getidlogin(name.toLowerCase(),username.toLowerCase(),password.toLowerCase());
+	}
+
+	@DeleteMapping("login/deleteall")
 	public ResponseEntity<String> deletealllogin(){
 		logindatabase.deleteAll();
 		return new ResponseEntity<String>("sucess delete", HttpStatus.OK);

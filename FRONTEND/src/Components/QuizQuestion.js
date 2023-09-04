@@ -38,7 +38,7 @@ const QuizQuestion = () => {
         }else{
             console.log(questionData.id)
             axios
-            .post("https://quiz-backend-hf3v.onrender.com/quiz/submit/"+questionData.id,addanswerarray)
+            .post("https://quiz-web-application-5h1o.onrender.com/quiz/submit/"+questionData.id,addanswerarray)
             .then((response) => {
                 Setdata(response.data)
                 console.log(response.data);

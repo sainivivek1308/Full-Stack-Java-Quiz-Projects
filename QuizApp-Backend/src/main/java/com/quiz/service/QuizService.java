@@ -166,10 +166,10 @@ public class QuizService {
 		postdata1.setId(postdata.getId());
 		userJPA.save(postdata1);
 		Integer id=quizdao.findbyid(postdata.getCategory().toLowerCase(),postdata.getCategorytopic().toLowerCase());
-		System.out.println("id of user is "+id);
+		//System.out.println("id of user is "+id);
 		quizuserdata.setId(id);
 		quizuserdata.setQuestion(getQuizQuestion(id).getBody());
-		System.out.println(quizuserdata.getQuestion());
+		//System.out.println(quizuserdata.getQuestion());
 		return new ResponseEntity<QuizQuestionUI>(quizuserdata,HttpStatus.OK);
 	}
 
@@ -191,6 +191,16 @@ public class QuizService {
 		}
 		return new ResponseEntity<String>("Not sucess deleted", HttpStatus.BAD_REQUEST);
 	}
+
+    public ResponseEntity<Boolean> getidlogin(String name,String username,String password) {
+        //Login_detail logindt=logindatabase.findByName(name);
+		Integer id=logindatabase.findbyid(name, username, password);
+		if(id!=null){
+			//System.out.println("Your login detail is "+id);
+			return new ResponseEntity<Boolean>(true, HttpStatus.OK);
+		}
+		return new ResponseEntity<Boolean>(false, HttpStatus.BAD_REQUEST);
+    }
 
 	
 	

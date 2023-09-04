@@ -1,9 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import axios from 'axios';
 import { Spinner } from 'flowbite-react';
-import QuizContext from '../Context/Quiz Projects/QuizContext';
-import StartQuiz from './StartQuiz';
 import Navbarr from './Navbarr';
 const QuizResult = ({data}) => {
     const navigate=useNavigate();

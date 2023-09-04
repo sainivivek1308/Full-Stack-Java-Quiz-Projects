@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react'
 import { Button, Label, TextInput } from 'flowbite-react';
-import QuizQuestion from "./QuizQuestion"
 import './QuizQuestion.css'
 import QuizContext from '../Context/Quiz Projects/QuizContext';
 import axios from 'axios';
@@ -8,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 const StartQuiz = () => {
   const navigate=useNavigate();
   const {getdata}=useContext(QuizContext); 
-  const [click,setClick]=useState(false); 
   const [postuserdata,setpostuserdata]=useState({
     name:'',
     category:'',
@@ -84,6 +82,7 @@ const StartQuiz = () => {
                     <input id="password2" required shadow placeholder="Enter Category"
                       name="category"
                       value="Python"
+                      disabled
                       onChange={Onchangehandle}
                       type="radio" />Python
                     
@@ -92,6 +91,7 @@ const StartQuiz = () => {
                     <input id="password2" required shadow placeholder="Enter Category"
                       name="category"
                       value="HTML"
+                      disabled
                       onChange={Onchangehandle}
                       type="radio" />HTML
                     
@@ -125,6 +125,7 @@ const StartQuiz = () => {
                     <input id="password2" required shadow placeholder="Enter Category"
                       name="categorytopic"
                       value="Array"
+                      disabled
                       onChange={Onchangehandle}
                       type="radio" />Array
                     
@@ -133,6 +134,7 @@ const StartQuiz = () => {
                     <input id="password2" required shadow placeholder="Enter Category"
                       name="categorytopic"
                       value="String"
+                      disabled
                       onChange={Onchangehandle}
                       type="radio" />String
                     

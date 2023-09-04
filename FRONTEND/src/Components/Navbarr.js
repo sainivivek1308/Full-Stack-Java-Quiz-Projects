@@ -1,5 +1,5 @@
 import { Navbar } from 'flowbite-react';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function Navbarr() {
@@ -25,6 +25,7 @@ export default function Navbarr() {
     <Navbar
         fluid
         rounded
+         
         style={{fontSize:"20px"}}
       >
         

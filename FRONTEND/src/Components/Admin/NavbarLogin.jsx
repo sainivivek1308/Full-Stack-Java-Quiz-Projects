@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom';
 const NavbarLogin = () => {
     const NavLinkdata=[
         {
-          "namelink":"/contact",
+          "namelink":"/Viewuser",
           "StartData":"View Users"  
         },
         {
-          "namelink":"/Login",
+          "namelink":"/Questionadd",
           "StartData":"Add Question"
         },
         {
-          "namelink":"/StartQuiz",
+          "namelink":"/ViewQuestion",
           "StartData":"View Question"
         },
         
@@ -24,7 +24,8 @@ const NavbarLogin = () => {
       <Navbar
         fluid
         rounded
-        style={{fontSize:"25px"}}
+        
+        style={{fontSize:"20px"}}
        >
         
         
