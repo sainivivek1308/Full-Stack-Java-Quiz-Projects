@@ -1,7 +1,8 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { confirmAlert } from "react-confirm-alert";
 import Navbarr from './Navbarr';
+import axios from 'axios';
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -9,10 +10,16 @@ const Login = () => {
     const [passwordalert,setPasswordalert]=useState(false) 
     const [emailalert,setEmailalert]=useState(false) 
     const [namealert,setNamealert]=useState(false) 
-    
+    useEffect(
+      () => {
+        if(localStorage.getItem("loginsucess")){
+          navigate("/homelogin")
+        }
+      },[]
+    )
     const navigate=useNavigate()
     const submit1 = () => {
-      console.log("hello")
+      //console.log("hello")
       confirmAlert({
         title: "Confirm to submit",
         message: "Are you sure to submit the detail.",
@@ -26,8 +33,23 @@ const Login = () => {
               
               if((passwordalert) && (emailalert) && (namealert)){
                   alert("submit sucess")
-                  //localStorage.setItem("loginsucess",true)
-                  navigate("/homelogin")            
+                  axios.get('https://quiz-web-application-5h1o.onrender.com/admin/login/getstatus', {
+                  params: {
+                    name: name,
+                    username: email,
+                    password: password
+                    }
+                  })
+                  .then(response => {
+                    // handle success
+                    navigate("/homelogin")
+                    localStorage.setItem("loginsucess",true)
+                  })
+                  .catch(error => {
+                    // handle error
+                  });
+                  //
+                              
               }
               else{
                 alert("Please Enter right details according to validation")
