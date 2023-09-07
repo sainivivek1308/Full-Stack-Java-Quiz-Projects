@@ -77,9 +77,9 @@ public class AdminController {
 		//return null;
 	}
 	@GetMapping("login/getstatus")
-	public ResponseEntity<Boolean> viewid(@RequestParam("name") String name,@RequestParam String username,String password){
+	public ResponseEntity<Boolean> viewid(@RequestParam("name") String name,@RequestParam String username,@RequestParam String password){
 
-		return quizservice.getidlogin(name.toLowerCase(),username.toLowerCase(),password.toLowerCase());
+		return quizservice.getidlogin(name.toLowerCase(),username.toLowerCase(),password);
 	}
 
 	@DeleteMapping("login/deleteall")

@@ -21,9 +21,19 @@ const Contact = () => {
     <h5 class="mb-2 text-xl font-bold  text-center rounded-full p-2  m-2 tracking-tight  bg-cyan-300  text-gray-900 dark:text-white">
       Why Choose Us?
     </h5>
-    <p class="font-normal text-gray-800 dark:text-gray-400">
-      Founded by a group of avid quizzers, <span className='font-bold text-red-600'> Quiz Application </span> was born out of a shared love for trivia and the desire to create a platform that makes learning entertaining. We wanted to provide a place where people of all ages could challenge themselves, expand their knowledge, and have a great time doing it.
-    </p>
+        <ul class="font-normal text-gray-800 dark:text-gray-400">
+      <li>
+      <span className='font-bold text-red-500'>Learn Something New:</span> Every quiz is an opportunity to gain knowledge in a fun and engaging way. Whether you're a student looking for study aids or simply curious, our quizzes have something to offer.
+      </li>
+      <li>
+      <span className='font-bold text-red-500'>Entertainment on Demand:</span> Need a break from your routine? Our quizzes are a great way to relax and have fun. You can access them anytime, anywhere.
+      </li>
+      <li>
+      <span className='font-bold text-red-500'>Challenge Yourself:</span>
+       Test your knowledge and improve your cognitive skills. Our quizzes are designed to challenge your memory, critical thinking, and problem-solving abilities.
+      </li>
+      </ul>
+    
      
     </div>
     

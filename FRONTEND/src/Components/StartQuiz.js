@@ -18,7 +18,7 @@ const StartQuiz = () => {
     setpostuserdata({...postuserdata,[event.target.name]:event.target.value})
     //console.log(event.target.name," and value is ",event.target.value)
   }
-  async function hello(event){
+  function hello(event){
   
     event.preventDefault();
     //alert("Clicked");
@@ -30,7 +30,7 @@ const StartQuiz = () => {
         getdata(response.data)
         console.log(response.data);
         localStorage.setItem("startquiz",true);
-        
+        navigate("/StartQuiz")  
       })
       .catch((error) => {
         if (error.response) {
@@ -43,7 +43,7 @@ const StartQuiz = () => {
         }
       });
       //await setTimeout(hello,60000);
-      navigate("/StartQuiz") 
+       
       //setClick(true);
     
   }

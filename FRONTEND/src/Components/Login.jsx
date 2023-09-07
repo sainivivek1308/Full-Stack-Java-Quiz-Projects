@@ -3,8 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import { confirmAlert } from "react-confirm-alert";
 import Navbarr from './Navbarr';
 import axios from 'axios';
+import { faSlash } from '@fortawesome/free-solid-svg-icons';
 const Login = () => {
     const [email, setEmail] = useState('');
+    const [loginvalid,setloginvalid]=useState(false);
     const [password, setPassword] = useState('');
     const [name,setName] = useState("");
     const [passwordalert,setPasswordalert]=useState(false) 
@@ -41,9 +43,11 @@ const Login = () => {
                     }
                   })
                   .then(response => {
+                    alert("Now work are progress,login window render again")
                     // handle success
                     navigate("/homelogin")
-                    localStorage.setItem("loginsucess",true)
+                    setloginvalid(true)
+                    localStorage.setItem("loginsucess",loginvalid)
                   })
                   .catch(error => {
                     // handle error

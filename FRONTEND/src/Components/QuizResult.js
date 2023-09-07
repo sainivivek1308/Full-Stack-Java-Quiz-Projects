@@ -17,7 +17,7 @@ const QuizResult = ({data}) => {
    
   return (
     <>
-    <Navbarr/>
+    
     {data?
       (<>
       <div className=' flex bg-red-500 rounded-2xl  flex-col justify-between  p-4 mx-2 '>
