@@ -6,7 +6,6 @@ import axios from 'axios';
 import { faSlash } from '@fortawesome/free-solid-svg-icons';
 const Login = () => {
     const [email, setEmail] = useState('');
-    const [loginvalid,setloginvalid]=useState(false);
     const [password, setPassword] = useState('');
     const [name,setName] = useState("");
     const [passwordalert,setPasswordalert]=useState(false) 
@@ -15,6 +14,7 @@ const Login = () => {
     useEffect(
       () => {
         if(localStorage.getItem("loginsucess")){
+          alert("Already Admin Login Now,Admin Readirect to Admin home page")
           navigate("/homelogin")
         }
       },[]
@@ -43,11 +43,15 @@ const Login = () => {
                     }
                   })
                   .then(response => {
-                    alert("Now work are progress,login window render again")
+                    if(response.data){
+                      alert("Now work are progress,login window render again")
                     // handle success
-                    navigate("/homelogin")
-                    setloginvalid(true)
-                    localStorage.setItem("loginsucess",loginvalid)
+                    localStorage.setItem("loginsucess",response.data)
+                      navigate("/homelogin")
+                      
+                    
+                    }
+                    
                   })
                   .catch(error => {
                     // handle error

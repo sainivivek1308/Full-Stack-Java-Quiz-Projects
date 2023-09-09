@@ -30,7 +30,7 @@ export default function Navbarr() {
       >
         
         
-          <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
+          <span className="self-center whitespace-nowrap  text-2xl text-blue-700 font-bold dark:text-white">
             Quiz Application
           </span>
         {/* </Navbar.Brand>  */}
