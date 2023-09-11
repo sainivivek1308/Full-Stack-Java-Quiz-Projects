@@ -3,16 +3,17 @@ import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import StartQuiz from './StartQuiz';
 import Navbarr from './Navbarr';
+import './Navbarr.css'
 
 const Home = () => {
   return (
     <>
-    <div className='bg-black m-auto'>
+    <div className=''>
     <Navbarr/>    
-    <div className='flex flex-wrap     justify-around border-red-600 w-full' >
+    <div className='flex flex-wrap    justify-between border-red-600 w-full' >
       <div  className="block max-w-xl p-3 ml-8  mx-4 dark:bg-red-800 dark:border-red-700 dark:hover:bg-gray-700"> 
-        <h1 className="mb-4 text-4xl font-bold leading-none tracking-tight text-red-600   md:text-5xl lg:text-6xl dark:text-white m-auto">MAKE AN INTERACTIVE QUIZ APPLICATION FOR USERS</h1>
-        <h1 class="mb-6 text-3xl font-bold text-white ">Test people’s knowledge with an interactive online quiz</h1>
+        <h1 className="mb-4 text-4xl  bg-sky-400 ml-5 font-bold leading-none tracking-tight text-red-600   md:text-5xl lg:text-6xl dark:text-white m-auto">MAKE AN INTERACTIVE QUIZ APPLICATION FOR USERS</h1>
+        <h1 class="mb-6 text-3xl ml-5 font-bold ">Test people’s knowledge with an interactive online quiz</h1>
         
         <div className='block  p-6    dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700'>
           <StartQuiz/>
@@ -20,12 +21,12 @@ const Home = () => {
         </div>
         
       </div>
-      <div className='flex flex-wrap mt-5 flex-col gap-5 '>
+      <div className='flex flex-wrap  flex-col gap-5  ml-16   mediacard'>
         
-        <div class="max-w-sm flex gap-5   p-2 bg-sky-400 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="max-w-lg flex gap-5   p-2 bg-sky-400 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <div className='p-2'>
               <NavLink  as={Link} to="#" className="object-cover">
-              <img width="450" height="450" src="https://img.icons8.com/fluency/240/000000/java-coffee-cup-logo.png" alt="java-coffee-cup-logo"/>
+              <img width="500" height="500" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBIpceUp1_AhcvNw6OgdONZo-W1fEfAT_27A&usqp=CAU" alt="java-coffee-cup-logo"/>
               </NavLink>
             </div>
             
@@ -42,7 +43,7 @@ const Home = () => {
                 </Link>
             </div>
         </div>
-        <div class="max-w-sm flex gap-0.5 mb-4 bg-sky-400 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div class="max-w-lg flex gap-0.5 mb-4 bg-sky-400 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <div className='m-1 p-2'>
               <NavLink  as={Link} to="#" className="object-cover">
               <img width="500" height="500" src="https://i.etsystatic.com/21540718/r/il/1d3613/3014816508/il_570xN.3014816508_h2qh.jpg" alt="java-coffee-cup-logo"/>

@@ -1,0 +1,12 @@
+@media screen and(max-width:1000px) {
+    .mediacard {
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: 30%;
+        margin-top: 0px;
+        gap: 0px
+    }
+}
