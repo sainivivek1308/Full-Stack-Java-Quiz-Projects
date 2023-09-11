@@ -24,6 +24,7 @@ export default function Navbarr() {
     <>
     <Navbar
         fluid
+        className='p-4'
         rounded
          
         style={{fontSize:"20px"}}
@@ -38,10 +39,11 @@ export default function Navbarr() {
         <Navbar.Collapse>
           <Navbar.Link
             active
+            className='bg-red-600'
             as={Link}
             to="/"
           >
-            <p style={{fontSize: '18px'} } >
+            <p style={{fontSize: '20px'} } >
               Home
             </p>
           </Navbar.Link>
@@ -49,10 +51,10 @@ export default function Navbarr() {
             NavLinkdata.map(namedata=>(
               <Navbar.Link
               as={Link}
-  
+              
               to={namedata.namelink}
               >
-              <p style={{fontSize: '18px'}  } >
+              <p style={{fontSize: '20px'}  } >
                 {namedata.StartData}
               </p>
               </Navbar.Link>

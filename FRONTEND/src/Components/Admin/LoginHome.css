@@ -1,0 +1,71 @@
+.right {
+    font-size: 20px;
+}
+
+.spanclass {}
+
+.navbarcss {
+    justify-content: center;
+    align-items: center;
+    gap: 6;
+    font-size: 17px;
+}
+
+@media screen and (min-width:801px) and (max-width:1200px) {
+    .imgclass1 {
+        margin: auto;
+        margin-left: 0.5rem;
+        max-width: 100%;
+        margin-right: 0rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        border-radius: 1.5rem;
+    }
+    .widthmedia {
+        width: 100%;
+        margin: 0.5rem;
+    }
+    .buttonmedia {
+        margin: auto;
+        margin-left: 40%;
+    }
+    .questiomedia {
+        flex-direction: column-reverse;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .questiomedia {
+        flex-direction: column-reverse;
+    }
+    .buttonim {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .imgclass {
+        margin: auto;
+        margin-left: 0.5rem;
+        max-width: 100%;
+    }
+    .imgclass1 {
+        margin: auto;
+        margin-left: 0.5rem;
+        max-width: 100%;
+        margin-right: 1rem;
+        padding-right: 1rem;
+        border-radius: 1.5rem;
+    }
+    .buttonmedia {
+        margin-left: 40%;
+    }
+    .navbars {
+        display: flex;
+        margin: auto;
+        margin-top: 20px;
+    }
+    .widthmedia {
+        width: 100%;
+        margin: 0.5rem;
+    }
+}

@@ -49,7 +49,7 @@ const StartQuiz = () => {
   }
   return (
     <>
-      <div className='flex gap-4 max-w-xl  flex-col bg-red-400 rounded-3xl' style={{margin:"auto"}}>
+      <div className='flex gap-4 max-w-xl  flex-col bg-pink-500 rounded-3xl' style={{margin:"auto"}}>
         <div className=''>
         <h2 className='text-4xl font-medium  text-white p-3 text-center'>Quiz APP</h2>
         {   
@@ -145,12 +145,22 @@ const StartQuiz = () => {
                       value="Collection framework"
                       onChange={Onchangehandle}
                       type="radio" />Collection framework
+
+                  </div>
+                  <div>
+                    <input id="password2" required shadow placeholder="Enter Category"
+                      name="categorytopic"
+                      value="OOPS Concept"
+                      disabled
+                      onChange={Onchangehandle}
+                      type="radio" />OOPS concept
                     
                   </div>
+                  
                 </div>
                  
                 </div>
-                <Button className="bg-black" type="submit" >
+                <Button className="bg-sky-800 font-bold text-3xl" type="submit" >
                   Start Quiz
                 </Button>
                 

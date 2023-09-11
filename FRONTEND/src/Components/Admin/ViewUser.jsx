@@ -1,10 +1,11 @@
 import React from 'react'
 import NavbarLogin from './NavbarLogin'
+import NavbarLoginHome from './NavbarLoginHome'
 
 const ViewUser = () => {
   return (
     <>
-        <NavbarLogin/>
+        <NavbarLoginHome/>
         <div>ViewUser</div>
     </>
     )

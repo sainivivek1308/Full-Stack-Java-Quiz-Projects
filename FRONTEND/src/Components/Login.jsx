@@ -20,8 +20,9 @@ const Login = () => {
       },[]
     )
     const navigate=useNavigate()
-    const submit1 = () => {
+    const submit1 = (e) => {
       //console.log("hello")
+      e.preventDefault();
       confirmAlert({
         title: "Confirm to submit",
         message: "Are you sure to submit the detail.",
@@ -46,7 +47,7 @@ const Login = () => {
                     if(response.data){
                       alert("Now work are progress,login window render again")
                     // handle success
-                    localStorage.setItem("loginsucess",response.data)
+                      localStorage.setItem("loginsucess",response.data)
                       navigate("/homelogin")
                       
                     
@@ -54,6 +55,7 @@ const Login = () => {
                     
                   })
                   .catch(error => {
+                    navigate("/kjshjhsj")
                     // handle error
                   });
                   //
